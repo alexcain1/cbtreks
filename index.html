@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CB Treks</title>
+  <meta name="description" content="CB Treks is a budget-friendly travel planning agency focused on allowing students and/or young adults to travel the world without breaking the bank"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lora', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    h1,h2,nav,header {font-family: 'Cormorant Garamond', serif;}
+    #nav{
+      background-color: #DDD6C9; /* Slightly darker linen/beige */
+      color: #2B2118;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 50;
+      transition: transform 0.3s ease;
+    }
+    #nav .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #4A5920;
+      margin-left: 0.75rem;
+    }
+    #nav a {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      margin-left: 1.5rem;
+      color: #4A5920;
+      transition: color 0.3s ease;
+    }
+    #nav a:hover {
+      color: #7a8f61;
+    }
+    .hide-scrollbar::-webkit-scrollbar {display: none;}
+    .hide-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow-x: auto;
+    }
+    .group:hover .mega-menu {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-[#FDFCED] text-[#2B2118]">
+   
+  <!-- Navigation -->
+  <nav id="nav" class="relative fixed top-0 left-0 right-0 z-50 shadow-md flex items-center px-6 md:px-2 py-1">
+    <!--Logo-->
+    <div class="flex items-center">
+      <img src='images/logo/logo.PNG' alt="CB Treks Logo" class="h-20 w-auto" />
+      <span class="logo-text">CB Treks</span>
+    </div>
+    <!--Desktop Menu-->
+    <div id="nav-links" class="hidden md:flex flex-grow justify-start lg:justify-center items-center">
+      <a href="index.html">Home</a>
+      <a href="#traps">Services</a>
+      <div class="relative group">
+        <a href="destinations.html">Destinations&#9662;</a>
+      </div>
+      <a href="#about">Tips</a>
+      <a href="#contact">FAQs</a>
+      <a href="#contact">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- Hamburger icon -->
+    <button id="hamburger-btn" class="md:hidden ml-auto" aria-label="Toggle Menu" style="background:none; border:none; color:#4A5920;">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+    <!-- Dropdown placed *outside* the relative group but inside nav -->
+    <div class="hidden group-hover:flex absolute top-full bg-[#EEF1E1] left-0 w-full pl-0 shadow-lg z-40 max-h-[75vh] overflow-auto" id="destinations-dropdown">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-stretch w-full">
+        <!--Most Popular-->
+        <div class="flex flex-col items-start">
+          <h3 class="font-semibold mb-2 pl-6 pt-2 text-2xl">Most Popular</h3>
+          <ul class="columns-2 text-left space-y-1 text-sm pb-5" style="column-gap: 3rem; padding-right: 3rem;">
+            <li><a href="#">Argentina</a></li>
+            <li><a href="#">Australia</a></li>
+            <li><a href="#">Belgium</a></li>
+            <li><a href="#">Canada</a></li>
+            <li><a href="#">Columbia</a></li>
+            <li><a href="#">Costa Rica</a></li>
+            <li><a href="#">Egypt</a></li>
+            <li><a href="#">France</a></li>
+            <li><a href="#">Germany</a></li>
+            <li><a href="#">Greece</a></li>
+            <li><a href="#">Iceland</a></li>
+            <li><a href="#">Italy</a></li>
+            <li><a href="#">Japan</a></li>
+            <li><a href="#">Morocco</a></li>
+            <li><a href="#">Namibia</a></li>
+            <li><a href="#">New Zealand</a></li>
+            <li><a href="#">Portugal</a></li>
+            <li><a href="#">Singapore</a></li>
+            <li><a href="#">South Africa</a></li>
+            <li><a href="#">Spain</a></li>
+            <li><a href="#">Sweden</a></li>
+            <li><a href="#">Thailand</a></li>
+            <li><a href="#">United Kingdom</a></li>
+            <li><a href="#">United States</a></li>
+            <li><a href="#">Vietnam</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+          <a href="destinations.html" class="bg-[#4A5920] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61]" style="color: white;">View All Destinations</a>
+        </div>
+        <div class="flex flex-col items-start">
+          <h3 class="font-semibold mb-2 pl-6 pt-2 text-2xl">Regions</h3>
+          <ul class="text-left space-y-1 text-sm pb-5">
+            <li><a href="#">Australia & New Zealand</a></li>
+            <li><a href="#">Caribbean Islands</a></li>
+            <li><a href="#">Central America</a></li>
+            <li><a href="#">Eastern Europe</a></li>
+            <li><a href="#">Middle East</a></li>
+            <li><a href="#">North America</a></li>
+            <li><a href="#">Northern Africa</a></li>
+            <li><a href="#">Northern Asia</a></li>
+            <li><a href="#">Oceania</a></li>
+            <li><a href="#">Scandinavia</a></li>
+            <li><a href="#">South America</a></li>
+            <li><a href="#">Southern Africa</a></li>
+            <li><a href="#">Southern Asia</a></li>
+            <li><a href="#">Western Europe</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+          <a href="#" class="bg-[#4A5920] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61] mb-4" style="color: white;">View Trip Ideas</a>
+        </div>
+        <!-- Vertical line container (separate) -->
+        <div id="vertical_line" class="relative hidden lg:block w-px min-h-[300px] ml-40" style="background: linear-gradient(to bottom, rgba(74,89,32,0), rgba(74,89,32,0.6), rgba(74,89,32,0));"></div>
+      </div>
+      <!--SlideShow Container-->
+      <div id="dropdown_slideshow" class="hidden lg:block absolute top-1/2 right-8 transform -translate-y-1/2 w-[30vw] h-[300px] overflow-hidden rounded-md shadow-lg z-30">
+        <!-- Dropdown Slides -->
+        <!--Ashford-->
+        <div class="dropdown-slides relative w-full h-full">
+          <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image: url('images/dropdown/ashford.webp')">
+            <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Ashford Castle, Ireland*</h2>
+          </div>
+        </div>
+        <!--Cusco-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/cusco.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Cusco, Peru*</h2>
+        </div>
+        <!--folaldfoss-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/folaldafoss.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Folaldfoss, Iceland*</h2>
+        </div>
+        <!--Louvre-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/louvre.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Louvre, France*</h2>
+        </div>
+        <!--Vatican-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/vatican.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Vatican City, Italy*</h2>
+        </div>
+        <!--Tikal-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/tikal.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Tikal, Guatemala*</h2>
+        </div>
+        <!--Monserrate-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/monserrate.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Monserrate, Portugal*</h2>
+        </div>
+        <!--Litlanesfoss-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/litlanesfoss.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Litlanesfoss, Iceland*</h2>
+        </div>
+        <!--Versailles-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/versailles.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Versailles, France*</h2>
+        </div>
+        <!--Ollantaytambo-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/ollantaytambo.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Ollantaytambo, Peru*</h2>
+        </div>
+        <!--Trinity-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/trinity.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Trinity College, Ireland*</h2>
+        </div>
+        <!--Obidos-->
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/obidos.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Obidos, Portugal*</h2>
+        </div>
+      </div>
+      <!-- Caption Below Slideshow -->
+      <p class="hidden lg:block absolute right-8 top-[calc(50%+160px)] w-[30vw] text-right text-xs text-gray-600 z-30">*Photos Captured on CB Treks Trips.</p>
+    </div> 
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-[#DDD6C9] shadow-md z-50 flex flex-col p-4 space-y-4 md:hidden">
+      <a href="index.html">Home</a>
+      <a href="#traps">Services</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="destinations.html">Trip Ideas</a>
+      <a href="#about">Tips</a>
+      <a href="#contact">FAQs</a>
+      <a href="#contact">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!--Add Dynamic Padding-->
+  <div id="content-padding"></div>
+  <!-- Hero Slideshow -->
+  <section class="relative h-[90vh] overflow-hidden">
+    <!--Slides-->
+    <div id="home_slideshow" class="relative w-full h-full">
+      <div id="home_slides" class="w-full h-full relative z-0">
+        <!--Palcoyo-->
+        <div class="home_slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('images/slideshow/Palcoyo.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Explore Majestic Peaks</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Breathe in crisp alpine air and hike through pristine trails.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Palcoyo Mountains, Peru*</h2>
+        </div>
+        <!--Porto-->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/Porto.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Porto, Portugal*</h2>
+        </div>
+        <!--Lake Atitlan-->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/Atitlan.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Lake Atitlan, Guatemala*</h2>
+        </div>
+        <!--MachuPicchu -->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/MachuPicchu.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Machu Picchu, Peru*</h2>
+        </div>
+        <!--Moher-->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/Moher.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Cliffs of Moher, Ireland*</h2>
+        </div>
+        <!--Douro -->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/Douro.webp')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Douro Valley, Portugal*</h2>
+        </div>
+        <!--Iceland Volcano-->
+        <div class="home_slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/slideshow/IcelandVolcano.JPG')">
+          <div class="relative z-20 flex flex-col items-start justify-center h-full px-10 text-white">
+            <h1 class="text-5xl font-extrabold leading-tight mb-4">Relax on Sunny Shores</h1>
+            <p class="text-lg text-[#DDD6B8] max-w-xl">Unwind with crystal-clear water and stunning sunsets.</p>
+          </div>
+          <h2 class="absolute bottom-0 right-0 m-4 text-2xl font-semibold text-[#F5F0E1]">Fagradalsfjall, Iceland*</h2>
+        </div>
+      </div>
+      <!--Navigation Buttons-->
+      <button id="homePrevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-40 p-3 rounded-full z-30 hover:bg-opacity-60">&#10094;</button>
+      <button id="homeNextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-40 p-3 rounded-full z-30 hover:bg-opacity-60">&#10095;</button>
+      <!--Dots-->
+      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-100 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+        <span class="home_dot w-3 h-3 rounded-full bg-white opacity-60 cursor-pointer"></span>
+      </div>
+    </div>
+  </section>
+  <!-- Slideshow Caption and Slogan -->
+  <section class="bg-[#EFEFEF] text-center overflow-x-auto hide-scrollbar pb-1">
+    <p class="text-sm text-gray-500 italic whitespace-nowrap">*Photos Captured on CB Treks Trips.</p>
+    <h2 class="text-2xl sm:text-3xl font-semibold whitespace-nowrap">From Big City Adventures to Outdoor Escapes, We Plan it All!</h2>
+  </section>
+  <!-- Our Ideals -->
+  <section class="bg-white py-4 px-4 sm:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-bold mb-1">Affordability</h3>
+        <div class="h-1 w-10 bg-[#4A5920] mx-auto mb-2"></div>
+        <p class="text-gray-600 text-sm">We design budget-conscious trips without sacrificing safety, comfort, quality, and good times.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-1">Personalization</h3>
+        <div class="h-1 w-10 bg-[#4A5920] mx-auto mb-2"></div>
+        <p class="text-gray-600 text-sm">It's your adventure. We tailor experiences based on your interests, pace, and group dynamics.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-1">Discovery</h3>
+        <div class="h-1 w-10 bg-[#4A5920] mx-auto mb-2"></div>
+        <p class="text-gray-600 text-sm">More than just sightseeing, our trips deliver memories you'll remember for a lifetime.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-1">Connection</h3>
+        <div class="h-1 w-10 bg-[#4A5920] mx-auto mb-2"></div>
+        <p class="text-gray-600 text-sm">Build meaningful memories with people and places that leave a lasting impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where to Go in the World -->
+  <section class="bg-[#EEF1E1] py-12 px-4 sm:px-8">
+    <h2 class="text-3xl font-bold text-center mb-2">Where to Go in the World</h2>
+    <div class="h-1 w-14 bg-[#4A5920] mx-auto mb-6"></div>
+    <!-- Descriptive paragraph -->
+    <div class="mt-6 text-center mx-auto text-gray-700 text-lg max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
+      Browse one of our destination pages to get a glimpse of the adventure that awaits.
+    </div>
+    <!--Continent Grid-->
+    <div class="mt-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <!--Europe-->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/continents/europe.webp" class="w-full h-64 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-3 left-3 text-white flex items-center space-x-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          <h3 class="font-semibold text-lg">Europe</h3>
+        </div>
+      </a>
+      <!--Asia-->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/continents/Asia.webp" class="w-full h-64 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-3 left-3 text-white flex items-center space-x-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          <h3 class="font-semibold text-lg">Asia</h3>
+        </div>
+      </a>
+      <!--South America-->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/continents/southAmerica.jpg" class="w-full h-64 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-3 left-3 text-white flex items-center space-x-2" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          <h3 class="font-semibold text-lg">South America</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Countries grid -->
+    <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <!-- France -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/france.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          France
+        </div>
+      </a>
+      <!-- Peru -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/peru.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Peru
+        </div>
+      </a>
+      <!-- Canada -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/canada.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Canada
+        </div>
+      </a>
+      <!-- Cambodia -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/cambodia.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Cambodia
+        </div>
+      </a>
+      <!-- Portugal -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/portugal.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Portugal
+        </div>
+      </a>
+      <!-- Italy -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/italy.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Italy
+        </div>
+      </a>
+      <!-- Belize -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/belize.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Belize
+        </div>
+      </a>
+      <!-- Guatemala -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/guatemala.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Guatemala
+        </div>
+      </a>
+      <!-- Japan -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/japan.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Japan
+        </div>
+      </a>
+      <!-- Namibia -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/namibia.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Namibia
+        </div>
+      </a>
+      <!-- Greece -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/greece.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300"/>
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Greece
+        </div>
+      </a>
+      <!-- Ireland -->
+      <a href="#" class="relative rounded-lg overflow-hidden shadow hover:shadow-md block group">
+        <img src="images/countries/ireland.webp" class="w-full h-32 object-cover block group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute bottom-2 left-2 text-white text-sm font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+          Ireland
+        </div>
+      </a>
+    </div>
+    <div class="text-center mt-8">
+      <a href="destinations.html" class="inline-block bg-[#4A5920] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61] transition">View All Destinations</a>
+    </div>
+  </section>
+
+  <!-- Trip Ideas -->
+  <section class="bg-gray-50 py-12 px-4 sm:px-8">
+    <h2 class="text-3xl font-bold text-center mb-2">Trip Ideas</h2>
+    <div class="h-1 w-14 bg-[#4A5920] mx-auto mb-6"></div>
+    <!-- Descriptive paragraph -->
+    <div class="mt-6 text-center mx-auto text-gray-700 text-lg max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
+      Whether you're craving a relaxing beach escape or an adrenaline-filled hiking trip, we've got inspiration for every travel style. Browse our themed guides and discover your next adventure.
+    </div>
+    <!-- Themed image-based trip ideas -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <!-- Hiking -->
+      <a href="/trips/hiking" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/hiking.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Hiking Adventures</div>
+      </a>
+      <!-- Outdoor Adventures -->
+      <a href="/trips/outdoor" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/outdoor.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Outdoor Adventures</div>
+      </a>
+      <!-- Road Trips -->
+      <a href="/trips/roadtrip" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/roadtrip.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Road Trip Worthy</div>
+      </a>
+      <!-- Romantic Trips -->
+      <a href="/trips/romantic" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/romantic.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Romantic Getaways</div>
+      </a>
+      <!-- Wildlife Tours -->
+      <a href="/trips/wildlife" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/wildlife.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Wildlife Tours</div>
+      </a>
+      <!-- Beach Vacations -->
+      <a href="/trips/beach" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/beach.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Beach Vacations</div>
+      </a>
+      <!-- Under the Radar Trips -->
+      <a href="/trips/radar" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/radar.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Under-the-Radar Vacations</div>
+      </a>
+       <!-- RailRoad Adventures -->
+      <a href="/trips/rail" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/rail.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Rail Adventures</div>
+      </a>
+      <!-- Safari -->
+      <a href="/trips/safari" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/safari.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Safaris</div>
+      </a>
+      <!-- Cruises -->
+      <a href="/trips/cruises" class="relative rounded-xl overflow-hidden group shadow hover:shadow-lg transition">
+        <img src="/images/trip_ideas/cruise.webp" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition"></div>
+        <div class="absolute bottom-4 left-4 text-white text-xl font-semibold drop-shadow-lg">Cruises</div>
+      </a>
+    </div>
+    <div class="text-center mt-8">
+      <a href="#" class="inline-block bg-[#4A5920] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61] transition">View All Trip Ideas</a>
+    </div>
+  </section>
+  
+  <!-- Booking Process -->
+  <section class="bg-[#EEF1E1] py-12 px-4 sm:px-8">
+    <h2 class="text-3xl font-bold text-center mb-2">How Booking Works</h2>
+    <div class="h-1 w-14 bg-[#4A5920] mx-auto mb-6"></div>
+    <!--Scrollable class-->
+    <div class="overflow-x-auto hide-scrollbar">
+      <div class="flex items-center space-x-6 min-w-max mx-auto px-2 lg:max-auto lg:justify-center"> 
+        <!-- Step 1: Form Icon -->
+        <div class="flex-shrink-0 w-64 p-4 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#CBD9A7] flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#4A5920] block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M15 12h-5"></path>
+              <path d="M15 8h-5"></path>
+              <path d="M19 17V5a2 2 0 0 0-2-2H4"></path>
+              <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#4A5920] mb-1">1. Contact Us</h3>
+          <p class="text-sm text-gray-600">Tell us where you want to go and what you want to do.</p>
+        </div>
+        <!-- Arrow -->
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-[#4A5920]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+        <!-- Step 2: Headset Icon -->
+        <div class="flex-shrink-0 w-64 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#CBD9A7] flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#4A5920] block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
+              <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#4A5920] mb-1">2. Talk to an Agent</h3>
+          <p class="text-sm text-gray-600">We’ll get to know your group and match you with the perfect options.</p>
+        </div>
+        <!-- Arrow -->
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-[#4A5920]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+        <!-- Step 3: Sent Icon -->
+        <div class="flex-shrink-0 w-64 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#CBD9A7] flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#4A5920] block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z"></path>
+              <path d="M6 12h16"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#4A5920] mb-1">3. Review Itinerary</h3>
+          <p class="text-sm text-gray-600">We’ll send a draft itinerary with a quote for review.</p>
+        </div>
+        <!-- Arrow -->
+        <div class="flex-shrink-0">
+          <svg class="w-6 h-6 text-[#4A5920]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+        <!-- Step 4: Airplane Icon -->
+        <div class="flex-shrink-0 w-64 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#CBD9A7] flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#4A5920] block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"></path>
+              <path d="M2 22h20"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#4A5920] mb-1">4. Book & Go</h3>
+          <p class="text-sm text-gray-600">Lock it in, finalize the details, and have fun!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speak to Us / Contact -->
+  <section class="bg-white py-12 px-4 sm:px-8">
+    <h2 class="text-3xl font-bold text-center mb-2">Contact Us</h2>
+    <div class="h-1 w-14 bg-[#4A5920] mx-auto mb-6"></div>
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="mb-4 text-gray-600">Not sure where to go? Want to talk to an agent?</p>
+      <a href="#contact" class="inline-block bg-[#4A5920] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#7a8f61] transition">Schedule a Free Call</a>
+      <p class="mt-6 text-sm text-gray-500">Or email us: <a href="mailto:info@cbtreks.com" class="underline">info@cbtreks.com</a></p>
+    </div>
+  </section>
+
+<!--Why Travel with CB Treks-->
+  <section class="bg-[#EEF1E1] py-12 px-4 sm:px-8">
+    <h2 class="text-3xl font-bold text-center mb-2">Why Travel with CB Treks?</h2>
+    <div class="h-1 w-14 bg-[#4A5920] mx-auto mb-6"></div>
+    <!-- Scrollable Container -->
+    <div class="flex space-x-6 overflow-x-auto px-4 hide-scrollbar lg:max-auto lg:justify-center">
+      <!-- Young Adult -->
+      <div class="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl shadow bg-[#ECECEC] overflow-hidden flex flex-col">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-center mb-2">Young Adult Friendly</h3>
+          <div class="h-1 w-14 bg-[#4A5920] mx-auto"></div>
+        </div>
+        <div class="w-full max-h-48 overflow-hidden pb-4">
+          <img src="/images/why/youngAdult.webp" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex-1 flex items-center justify-center px-4 pb-4 text-center">
+          <p class="text-gray-600 text-sm">
+            Tailored trips for young adults who seek new experiences without overspending.
+          </p>
+        </div>
+      </div>
+      <!-- Affordable -->
+      <div class="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl shadow bg-[#ECECEC] overflow-hidden flex flex-col">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-center mb-2">Affordable & Hassle-Free</h3>
+          <div class="h-1 w-14 bg-[#4A5920] mx-auto"></div>
+        </div>
+        <div class="w-full max-h-48 overflow-hidden pb-4">
+          <img src="/images/why/affordable.webp" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex-1 flex items-center justify-center px-4 pb-4 text-center">
+          <p class="text-gray-600 text-sm">We keep costs low without cutting corners.</p>
+        </div>
+      </div>
+      <!-- Curated -->
+      <div class="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl shadow bg-[#ECECEC] overflow-hidden flex flex-col">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-center mb-2">Curated Just for You</h3>
+          <div class="h-1 w-14 bg-[#4A5920] mx-auto"></div>
+        </div>
+        <div class="w-full max-h-48 overflow-hidden pb-4">
+          <img src="/images/why/curate.webp" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex-1 flex items-center justify-center px-4 pb-4 text-center">
+          <p class="text-gray-600 text-sm">
+            Every trip is planned around you to fit your adventure, vibe, and budget.
+          </p>
+        </div>
+      </div>
+      <!-- Support -->
+      <div class="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl shadow bg-[#ECECEC] overflow-hidden flex flex-col">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-center mb-2">Backed by Support</h3>
+          <div class="h-1 w-14 bg-[#4A5920] mx-auto"></div>
+        </div>
+        <div class="w-full max-h-48 overflow-hidden pb-4">
+          <img src="/images/why/support.webp" class="w-full h-full object-cover" />
+        </div>
+        <div class="flex-1 flex items-center justify-center px-4 pb-4 text-center">
+          <p class="text-gray-600 text-sm">We’ve got your back from pre-trip tips to on-the-ground help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer class="bg-gray-900 text-white py-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- About -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">About Us</h2>
+        <p class="text-sm">We help people connect through powerful solutions built for real users. Based in [Your City].</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Quick Links</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/home" class="hover:underline">Home</a></li>
+          <li><a href="/services" class="hover:underline">Services</a></li>
+          <li><a href="destinations.html" class="hover:underline">Destinations</a></li>
+          <li><a href="/tips" class="hover:underline">Tips</a></li>
+          <li><a href="/faqs" class="hover:underline">FAQs</a></li>
+          <li><a href="/about" class="hover:underline">About</a></li>
+          <li><a href="/contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Contact</h2>
+        <p class="text-sm">Email: support@example.com</p>
+        <p class="text-sm">Phone: (123) 456-7890</p>
+        <p class="text-sm">Address: 123 Main St, City, Country</p>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
+        <div class="flex space-x-4">
+          <a href="#" aria-label="Facebook"><svg class="h-5 w-5" fill="currentColor">...</svg></a>
+          <a href="#" aria-label="Twitter"><svg class="h-5 w-5" fill="currentColor">...</svg></a>
+          <a href="#" aria-label="Instagram"><svg class="h-5 w-5" fill="currentColor">...</svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-sm text-gray-400">
+      © 2025 CB Treks. All rights reserved.
+    </div>
+  </footer>
+  <!--JavaScript-->
+  <script>
+    //Start homepage Slideshow script
+    const homeSlides = document.querySelectorAll('.home_slide');
+    const homeDots = document.querySelectorAll('.home_dot');
+    let currentHome = 0;
+    let homeTimer;
+    const homeDelay = 5000;
+
+    const showHomeSlide = index =>{
+      homeSlides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1':'0';
+        homeDots[i].classList.toggle('opacity-100', i === index);
+        homeDots[i].classList.toggle('opacity-60', i !== index);
+      });
+      currentHome = index
+    };
+    
+    const nextHomeSlide = () => showHomeSlide((currentHome + 1) % homeSlides.length);
+    const prevHomeSlide = () => showHomeSlide((currentHome - 1 + homeSlides.length) % homeSlides.length);
+
+    document.getElementById('homeNextBtn').onclick = nextHomeSlide;
+    document.getElementById('homePrevBtn').onclick = prevHomeSlide;
+    homeDots.forEach((dot, i) => dot.addEventListener('click', () => showHomeSlide(i)));
+
+    const startHomeTimer = () => homeTimer = setInterval(nextHomeSlide, homeDelay);
+    const stopHomeTimer = () => clearInterval(homeTimer);
+
+    const homeSlideshow = document.getElementById('home_slideshow');
+    homeSlideshow.addEventListener('mouseenter', stopHomeTimer);
+    homeSlideshow.addEventListener('mouseleave', startHomeTimer);
+
+    showHomeSlide(0);
+    startHomeTimer();
+    //end homepage slideshow script
+    //start dropdown slide show script
+    const dropdownSlides = document.querySelectorAll('.dropdown-slide');
+    let currentDropdown = 0;
+    const dropdownDelay = 4000;
+
+    function showDropdownSlide(index) {
+      dropdownSlides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+      });
+      currentDropdown = index;
+    }
+
+    function nextDropdownSlide() {
+      showDropdownSlide((currentDropdown + 1) % dropdownSlides.length);
+    }
+
+    function startDropdownTimer() {
+      return setInterval(nextDropdownSlide, dropdownDelay);
+    }
+
+    showDropdownSlide(0);
+    const dropdownTimer = startDropdownTimer();
+    //end dropdwown slideshow menu
+    //start dynamic padding
+    const nav = document.getElementById('nav');
+    const contentPadding = document.getElementById('content-padding');
+    let lastScrollY = window.scrollY;
+
+    // Function to update top padding dynamically based on nav height
+    function updateContentPadding() {
+      const navHeight = nav.offsetHeight;
+      contentPadding.style.height = navHeight + 'px';
+    }
+    // Call once on load
+    updateContentPadding();
+    // Also update on resize in case nav size changes
+    window.addEventListener('resize', updateContentPadding);
+    //end dynamic padding
+    //start nav bar scroll
+    let lastScroll = 0;
+
+    const hideShowNav = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const threshold = window.innerHeight * 0.5;
+
+      console.log({ currentScroll, lastScroll, threshold }); // Debug: check scroll values
+
+      if (currentScroll > threshold) {
+        if (currentScroll > lastScroll) {
+          // scrolling down
+          nav.style.transform = 'translateY(-100%)';
+        } else {
+          // scrolling up
+          nav.style.transform = 'translateY(0)';
+        }
+      } else {
+        nav.style.transform = 'translateY(0)';
+      }
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    };
+
+    window.addEventListener('scroll', hideShowNav);
+    //end nav bar scroll
+    //start destinations mega menu
+    const group = document.querySelector('.group'); // Destinations nav item
+    const dropdown = document.getElementById('destinations-dropdown');
+
+    let isInNav = false;
+    let isInDropdown = false;
+
+    // When mouse enters anywhere in nav, flag true and show submenu if over Destinations
+    nav.addEventListener('mouseenter', () => {
+      isInNav = true;
+      // Optionally show submenu only if mouse is currently on Destinations
+      // But since user wants it open on nav hover, we can keep it open if hovered Destinations
+    });
+
+    // When mouse leaves nav, flag false and hide submenu if not in dropdown
+    nav.addEventListener('mouseleave', () => {
+      isInNav = false;
+      if (!isInDropdown) {
+        dropdown.classList.add('hidden');
+      }
+    });
+
+    // When mouse enters Destinations group, show submenu
+    group.addEventListener('mouseenter', () => {
+      dropdown.classList.remove('hidden');
+    });
+
+    // When mouse leaves Destinations group, check if still in nav or dropdown
+    group.addEventListener('mouseleave', () => {
+      if (!isInDropdown && !isInNav) {
+        dropdown.classList.add('hidden');
+      }
+    });
+
+    // When mouse enters dropdown, flag true and keep submenu visible
+    dropdown.addEventListener('mouseenter', () => {
+      isInDropdown = true;
+      dropdown.classList.remove('hidden');
+    });
+
+    // When mouse leaves dropdown, flag false and hide submenu if not in nav
+    dropdown.addEventListener('mouseleave', () => {
+      isInDropdown = false;
+      if (!isInNav) {
+        dropdown.classList.add('hidden');
+      }
+    });
+
+    // Optional: If you want submenu to close if mouse moves to other nav items besides Destinations
+    // Add event listeners to all nav links except Destinations to hide submenu when hovered
+
+    const navLinks = nav.querySelectorAll('#nav-links > a:not(.group)');
+
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        dropdown.classList.add('hidden');
+      });
+    });
+    //end destinations mega menu
+    //start mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    //end mobile menu toggle
+    //start mobile destinations dropdown toggle
+    const mobileDestBtn = document.getElementById('mobile-destinations-btn');
+    const mobileDestDropdown = document.getElementById('mobile-destinations-dropdown');
+    const mobileDestIcon = document.getElementById('mobile-destinations-icon');
+
+    mobileDestBtn.addEventListener('click', () => {
+      const isHidden = mobileDestDropdown.classList.contains('hidden');
+      if (isHidden) {
+        mobileDestDropdown.classList.remove('hidden');
+        mobileDestIcon.style.transform = 'rotate(180deg)'; // flip arrow up
+      } else {
+        mobileDestDropdown.classList.add('hidden');
+        mobileDestIcon.style.transform = 'rotate(0deg)'; // arrow down
+      }
+    });
+    //end mobile destinations dropdown toggle
+  </script>
+</body>
+</html>

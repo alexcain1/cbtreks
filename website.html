@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Look into putting a favicon image here or an image that gets shared when sending a link, make sure image looks good on all devices -->
+  <meta charset="UTF-8" />
+  <meta name="author" content="Alex Cain"/>
+  <meta name="description" content="CB Treks is a budget-friendly travel planning agency focused on allowing students and/or young adults to travel the world without breaking the bank"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CB Treks - Budget Travel for Young Explorers</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .image-container{
+      width: 100vw;
+      height: 75vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .mySlides{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+    }
+    .mySlides.active{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5rem;
+    background: rgba(0,0,0,0.5);
+    padding: 8px 16px;
+    border-radius: 8px;
+    z-index: 3;
+    }
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 4;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    body{
+      margin:0;
+      background-color: #e1d9c8
+    }
+  </style>
+</head>
+<body> 
+<!--Sidebar (initially hidden)-->
+<!--sidebar is turned olive, animated, and each item has the color changed to black when hovering-->
+<div class="w3-sidebar w3-olive w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button onclick="w3_close()" class="w3-button w3-xlarge w3-display-topright w3-hover-none w3-hover-text-black">&times;</button>
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="home.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Home</a>
+  <a href="services.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Services</a>
+  <button class="w3-button w3-block w3-left-align w3-hover-none w3-hover-text-black" onclick="myAccFunc()">Destinations <i class="fa fa-caret-down"></i></button>
+  <div id="destinationBtn" class="w3-hide w3-olive">
+    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Link</a>
+    <a href="#" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Link</a>
+    <a href="destinations.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">More...</a>
+  </div>
+  <a href="tips.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Travel Tips</a>
+  <a href="faqs.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">FAQs</a>
+  <a href="about.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">About</a>
+  <a href="contact.html" class="w3-bar-item w3-button w3-hover-none w3-hover-text-black">Contact</a>
+</div>
+<!--creates the button and overlay for the sidebar menu-->
+<div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+<!--Header-->
+<div class="w3-bar w3-olive" style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="flex: 1">
+    <button id="openNav" class="w3-button w3-olive w3-xlarge" onclick="w3_open()">&#9776</button>
+  </div>
+  <div style="flex: 1; text-align: center">
+    <span class="w3-center w3-xlarge">CB Treks</span>
+  </div>
+  <div style="flex: 1;"></div>
+</div>
+<!--Insert Image Slideshow on the home page-->
+<div class="w3-content w3-section image-container" id="imageContainer">
+  <button class="nav-button prev" onclick="changeSlide(-1)">&#x276E</button>
+  <button class="nav-button next" onclick="changeSlide(1)">&#x276F</button>
+  <img class="mySlides" src="./images/one.jpg" data-caption="Peru">
+  <img class="mySlides" src="./images/two.jpg" data-caption="Peru">
+  <img class="mySlides" src="./images/three.jpg" data-caption="Guat">
+  <img class="mySlides" src="./images/four.jpg" data-caption="Iceland">
+  <div class="caption" id="captionText"></div>
+</div>
+
+
+<!--Main content on the home page--> 
+<div id="home">
+
+</div>
+  
+
+
+
+
+<script>
+  // accordion drop down function for the destinations tab
+  function myAccFunc(){
+    var x = document.getElementById("destinationBtn");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      x.previousElementSibling.className += " w3-hover-none w3-hover-text-black";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+      x.previousElementSibling.className = 
+      x.previousElementSibling.className.replace(" w3-hover-none w3-hover-text-black", "");
+    }
+  }
+  //when sidebar opens sets overlay and pushes main screen to the right
+  function w3_open() {
+    document.getElementById("home").style.marginLeft = "25%";
+    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+    document.getElementById("openNav").style.visibility = "hidden";
+  }
+  //puts main screen back to full screen
+  function w3_close() {
+    document.getElementById("home").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+    document.getElementById("openNav").style.visibility = "visible";
+  }
+</script>
+
+<script>
+  let myIndex = 0;
+  const slides = document.getElementsByClassName("mySlides");
+  const caption = document.getElementById("captionText");
+  let slideInterval = setInterval(carousel, 5000);
+
+  function showSlide(n) {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slides[n].classList.add("active");
+    caption.textContent = slides[n].getAttribute("data-caption");
+  }
+
+  function carousel() {
+    myIndex = (myIndex + 1) % slides.length;
+    showSlide(myIndex);
+  }
+
+  function changeSlide(step) {
+    clearInterval(slideInterval); // Pause auto on manual click
+    myIndex = (myIndex + step + slides.length) % slides.length;
+    showSlide(myIndex);
+    slideInterval = setInterval(carousel, 2000); // Resume auto
+  }
+
+  // Pause on hover
+  const container = document.querySelector('.image-container');
+  container.addEventListener('mouseenter', () => clearInterval(slideInterval));
+  container.addEventListener('mouseleave', () => slideInterval = setInterval(carousel, 5000));
+
+  // Initial display
+  showSlide(myIndex);
+</script>
+</body>
+</html>
