@@ -1,0 +1,163 @@
+<!-- Navigation -->
+<nav id="nav" class="relative fixed top-0 left-0 right-0 z-50 shadow-md flex items-center px-6 md:px-2 py-1">
+  <!--Logo-->
+  <div class="flex items-center">
+    <img src='images/logo/logo.PNG' alt="CB Treks Logo" class="h-20 w-auto" />
+    <span class="logo-text">CB Treks</span>
+  </div>
+  <!--Desktop Menu-->
+  <div id="nav-links" class="hidden md:flex flex-grow justify-start lg:justify-center items-center">
+    <a href="index.html">Home</a>
+    <a href="#traps">Services</a>
+    <div class="relative group">
+      <a href="destinations.html">Destinations&#9662;</a>
+    </div>
+    <a href="#about">Tips</a>
+    <a href="#contact">FAQs</a>
+    <a href="#contact">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <!-- Hamburger icon -->
+  <button id="hamburger-btn" class="md:hidden ml-auto" aria-label="Toggle Menu" style="background:none; border:none; color:#4A5920;">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  </button>
+  <!-- Dropdown placed *outside* the relative group but inside nav -->
+  <div class="hidden group-hover:flex absolute top-full bg-[#EEF1E1] left-0 w-full pl-0 shadow-lg z-40 max-h-[75vh] overflow-auto" id="destinations-dropdown">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-stretch w-full">
+      <!--Most Popular-->
+      <div class="flex flex-col items-start">
+        <h3 class="font-semibold mb-2 pl-6 pt-2 text-2xl">Most Popular</h3>
+        <ul class="columns-2 text-left space-y-1 text-sm pb-5" style="column-gap: 3rem; padding-right: 3rem;">
+          <li><a href="#">Argentina</a></li>
+          <li><a href="#">Australia</a></li>
+          <li><a href="#">Belgium</a></li>
+          <li><a href="#">Canada</a></li>
+          <li><a href="#">Columbia</a></li>
+          <li><a href="#">Costa Rica</a></li>
+          <li><a href="#">Egypt</a></li>
+          <li><a href="#">France</a></li>
+          <li><a href="#">Germany</a></li>
+          <li><a href="#">Greece</a></li>
+          <li><a href="#">Iceland</a></li>
+          <li><a href="#">Italy</a></li>
+          <li><a href="#">Japan</a></li>
+          <li><a href="#">Morocco</a></li>
+          <li><a href="#">Namibia</a></li>
+          <li><a href="#">New Zealand</a></li>
+          <li><a href="#">Portugal</a></li>
+          <li><a href="#">Singapore</a></li>
+          <li><a href="#">South Africa</a></li>
+          <li><a href="#">Spain</a></li>
+          <li><a href="#">Sweden</a></li>
+          <li><a href="#">Thailand</a></li>
+          <li><a href="#">United Kingdom</a></li>
+          <li><a href="#">United States</a></li>
+          <li><a href="#">Vietnam</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+        <a href="destinations.html" class="bg-[#4A5920] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61]" style="color: white;">View All Destinations</a>
+      </div>
+      <div class="flex flex-col items-start">
+        <h3 class="font-semibold mb-2 pl-6 pt-2 text-2xl">Regions</h3>
+        <ul class="text-left space-y-1 text-sm pb-5">
+          <li><a href="#">Australia & New Zealand</a></li>
+          <li><a href="#">Caribbean Islands</a></li>
+          <li><a href="#">Central America</a></li>
+          <li><a href="#">Eastern Europe</a></li>
+          <li><a href="#">Middle East</a></li>
+          <li><a href="#">North America</a></li>
+          <li><a href="#">Northern Africa</a></li>
+          <li><a href="#">Northern Asia</a></li>
+          <li><a href="#">Oceania</a></li>
+          <li><a href="#">Scandinavia</a></li>
+          <li><a href="#">South America</a></li>
+          <li><a href="#">Southern Africa</a></li>
+          <li><a href="#">Southern Asia</a></li>
+          <li><a href="#">Western Europe</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+        <a href="#" class="bg-[#4A5920] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#7a8f61] mb-4" style="color: white;">View Trip Ideas</a>
+      </div>
+      <!-- Vertical line container (separate) -->
+      <div id="vertical_line" class="relative hidden lg:block w-px min-h-[300px] ml-40" style="background: linear-gradient(to bottom, rgba(74,89,32,0), rgba(74,89,32,0.6), rgba(74,89,32,0));"></div>
+    </div>
+    <!--SlideShow Container-->
+    <div id="dropdown_slideshow" class="hidden lg:block absolute top-1/2 right-8 transform -translate-y-1/2 w-[30vw] h-[300px] overflow-hidden rounded-md shadow-lg z-30">
+      <!-- Dropdown Slides -->
+      <!--Ashford-->
+      <div class="dropdown-slides relative w-full h-full">
+        <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-100 transition-opacity duration-1000" style="background-image: url('images/dropdown/ashford.webp')">
+          <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Ashford Castle, Ireland*</h2>
+        </div>
+      </div>
+      <!--Cusco-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/cusco.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Cusco, Peru*</h2>
+      </div>
+      <!--folaldfoss-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/folaldafoss.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Folaldfoss, Iceland*</h2>
+      </div>
+      <!--Louvre-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/louvre.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Louvre, France*</h2>
+      </div>
+      <!--Vatican-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/vatican.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Vatican City, Italy*</h2>
+      </div>
+      <!--Tikal-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/tikal.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Tikal, Guatemala*</h2>
+      </div>
+      <!--Monserrate-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/monserrate.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Monserrate, Portugal*</h2>
+      </div>
+      <!--Litlanesfoss-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/litlanesfoss.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Litlanesfoss, Iceland*</h2>
+      </div>
+      <!--Versailles-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/versailles.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Versailles, France*</h2>
+      </div>
+      <!--Ollantaytambo-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/ollantaytambo.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Ollantaytambo, Peru*</h2>
+      </div>
+      <!--Trinity-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/trinity.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Trinity College, Ireland*</h2>
+      </div>
+      <!--Obidos-->
+      <div class="dropdown-slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('images/dropdown/obidos.webp')">
+        <h2 class="absolute bottom-2 right-2 font-semibold text-[#F5F0E1] text-sm px-2 py-1 rounded">Obidos, Portugal*</h2>
+      </div>
+    </div>
+    <!-- Caption Below Slideshow -->
+    <p class="hidden lg:block absolute right-8 top-[calc(50%+160px)] w-[30vw] text-right text-xs text-gray-600 z-30">*Photos Captured on CB Treks Trips.</p>
+  </div> 
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 bg-[#DDD6C9] shadow-md z-50 flex flex-col p-4 space-y-4 md:hidden">
+    <a href="index.html">Home</a>
+    <a href="#traps">Services</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="destinations.html">Trip Ideas</a>
+    <a href="#about">Tips</a>
+    <a href="#contact">FAQs</a>
+    <a href="#contact">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!--Add Dynamic Padding-->
+<div id="content-padding"></div>

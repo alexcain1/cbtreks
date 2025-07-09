@@ -1,0 +1,41 @@
+#nav{
+  background-color: #DDD6C9; /* Slightly darker linen/beige */
+  color: #2B2118;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+#nav .logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #4A5920;
+  margin-left: 0.75rem;
+}
+#nav a {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  color: #4A5920;
+  transition: color 0.3s ease;
+}
+#nav a:hover {
+  color: #7a8f61;
+}
+.hide-scrollbar::-webkit-scrollbar {display: none;}
+.hide-scrollbar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: auto;
+}
+.group:hover .mega-menu {
+  display: flex;
+}
