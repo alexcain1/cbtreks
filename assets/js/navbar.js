@@ -1,38 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  //Start homepage Slideshow script
-  const homeSlides = document.querySelectorAll('.home_slide');
-  const homeDots = document.querySelectorAll('.home_dot');
-  let currentHome = 0;
-  let homeTimer;
-  const homeDelay = 5000;
-
-  const showHomeSlide = index =>{
-    homeSlides.forEach((slide, i) => {
-    slide.style.opacity = i === index ? '1':'0';
-    homeDots[i].classList.toggle('opacity-100', i === index);
-    homeDots[i].classList.toggle('opacity-60', i !== index);
-    });
-    currentHome = index
-  };
-      
-  const nextHomeSlide = () => showHomeSlide((currentHome + 1) % homeSlides.length);
-  const prevHomeSlide = () => showHomeSlide((currentHome - 1 + homeSlides.length) % homeSlides.length);
-
-  document.getElementById('homeNextBtn').onclick = nextHomeSlide;
-  document.getElementById('homePrevBtn').onclick = prevHomeSlide;
-  homeDots.forEach((dot, i) => dot.addEventListener('click', () => showHomeSlide(i)));
-
-  const startHomeTimer = () => homeTimer = setInterval(nextHomeSlide, homeDelay);
-  const stopHomeTimer = () => clearInterval(homeTimer);
-
-  const homeSlideshow = document.getElementById('home_slideshow');
-  homeSlideshow.addEventListener('mouseenter', stopHomeTimer);
-  homeSlideshow.addEventListener('mouseleave', startHomeTimer);
-
-  showHomeSlide(0);
-  startHomeTimer();
-  //end homepage slideshow script
   //start dropdown slide show script
   const dropdownSlides = document.querySelectorAll('.dropdown-slide');
   let currentDropdown = 0;
