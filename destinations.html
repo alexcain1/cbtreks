@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
-  <link href="navbar.css" rel="stylesheet">
+  <link href="/assets/css/navbar.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Lora', sans-serif;
@@ -53,7 +53,7 @@
 <body class="bg-[#FDFCED] text-[#2B2118]">
 
   <!--Pull in Navbar-->
-  <div id="navbar-container"></div>
+  {% include navbar.html %}
 
   <!--World Map-->
   <div class="hidden md:block world-map-wrapper bg-[#EEF1E1] pt-20">
@@ -393,6 +393,6 @@
   </footer>
 
   <!--Javascript-->
-  <script src="navbar.js"></script>
+  <script src="/assets/js/navbar.js"></script>
 </body>
 </html>
