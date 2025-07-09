@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!--Fonts and CSS-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/css/navbar.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lora', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    h1,h2,nav,header {font-family: 'Cormorant Garamond', serif;}
+    .hide-scrollbar::-webkit-scrollbar {display: none;}
+    .hide-scrollbar{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      overflow-x: auto;
+    }
+    .world-map-wrapper {
+      background-color: #EEF1E1;
+      padding-top: 5rem;
+    }
+    .world-map-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .world-map {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .region-btn {
+      position: absolute;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8); /* optional */
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FDFCED] text-[#2B2118]">
+  {% include navbar.html %}
+  {{ content }}
+  <script src="{{ site.baseurl }}/assets/js/navbar.js"></script>
+</body>
+</html>
