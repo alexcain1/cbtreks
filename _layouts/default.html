@@ -11,6 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
   <link href="{{ site.baseurl }}/assets/css/navbar.css" rel="stylesheet">
+  {% if page.custom_css %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.custom_css }}">
+  {% endif %}
   <style>
     body {
       font-family: 'Lora', sans-serif;
